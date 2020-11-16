@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
    public Transform Turtle;
    public Transform Slime;
-
-     Animator TurtleAnim;
-     Animator SlimeAnim;
+    Animator TurtleAnim;
+      Animator SlimeAnim;
+    
 
      void Start()
      {
@@ -16,25 +15,27 @@ public class GameManager : MonoBehaviour
          SlimeAnim=Slime.GetComponent<Animator>();
      }
 
-     public void AttackAnim()
+     public void Attack()
      {
-       TurtleAnim.SetTrigger("攻擊");
-       SlimeAnim.SetTrigger("攻擊");
+       TurtleAnim.SetTrigger("attack");
+       SlimeAnim.SetTrigger("attack");
      }
      public void GetHurt()
      {
-       TurtleAnim.SetTrigger("受攻擊");
-       SlimeAnim.SetTrigger("受攻擊");
+       TurtleAnim.SetTrigger("hit");
+       SlimeAnim.SetTrigger("hit");
      }
      public void Happy()
      {
-       TurtleAnim.SetTrigger("高興");
-       SlimeAnim.SetTrigger("高興");
+       TurtleAnim.SetTrigger("happy");
+       SlimeAnim.SetTrigger("happy");
      }
      public void Stun()
      {
-       TurtleAnim.SetBool("暈眩");
-       SlimeAnim.SetBool("暈眩");
+        TurtleAnim.SetTrigger("dizzy");
+        SlimeAnim.SetTrigger("dizzy");
+        
+       
      }
 
 }
